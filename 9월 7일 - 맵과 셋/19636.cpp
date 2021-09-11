@@ -39,7 +39,7 @@ int main()
 		cout << Dessi.status<<'\n';
 	else
 		cout << Dessi.weight << ' ' << I0<<'\n';
-	// 일일 기초 대사량 고려 O
+	// 일일 기초 대사량 고려 O 
 	if (Dessi.status_v == "Danger Diet")
 		cout << Dessi.status_v << '\n';
 	else
