@@ -13,30 +13,25 @@ int main()
 	cin >> N >> P;
 
 	stack <int> moves[LINE];
-	for (int i = 0; i < N; i++)
+	while(N--)
 	{
 		cin >> L >> note;
-		// 그 줄에 무언가 누르고 있을 때
-		if(!moves[L - 1].empty())
+		// pop: 그 줄을 누르고 있고 누른 음의 프렛이 더 낮을 때
+		while (!moves[L - 1].empty() && moves[L - 1].top() > note)
 		{
-			// 누른 음의 프렛이 더 낮거나 같을 때
-			if (moves[L - 1].top() >= note);
-			{
-				// 누른 음의 프렛이 더 낮을 때
-				while (!moves[L - 1].empty() && moves[L - 1].top() > note)
-				{
-					moves[L - 1].pop();
-					cnt++;
-				}
-				// 누른 음의 프렛이 같을 때
-				if (!moves[L - 1].empty() && moves[L - 1].top() == note)
-					continue;
-			}
-			
+			moves[L - 1].pop();
+			cnt++;
 		}
-		moves[L - 1].push(note);
-		cnt++;
-		// cout << cnt << '\n';  // 디버깅
+		// push: 그 줄을 누르지 X
+		// push: 그 줄을 누르고 있고 누른 음의 프렛이 더 높을 때
+		if (moves[L - 1].empty() || (!moves[L - 1].empty() && moves[L - 1].top() < note))
+		{
+			moves[L - 1].push(note);
+			cnt++;
+		}
+		// 그 줄을 누르고 있고 누른 음의 프렛이 같을 때
+		else if (!moves[L - 1].empty() && moves[L - 1].top() == note)
+			continue;
 	}
 
 	cout << cnt;
