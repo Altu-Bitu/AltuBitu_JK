@@ -33,7 +33,6 @@ int main()
 		else if (!moves[L - 1].empty() && moves[L - 1].top() == note)
 			continue;
 	}
-
 	cout << cnt;
 	return 0;
 }
