@@ -5,17 +5,23 @@ using namespace std;
 
 const int MAX = 1000;
 
-int main()
+vector<int> triangularNum(int num)
 {
-	int t, k, num=0;
-	vector<int> triangle;
+	vector<int> tmp;
 	// 삼각수 계산
 	// i*(i+1)/2 로 구현해도 됨
-	for(int i=1; num<1000; i++)
+	for (int i = 1; num < 1000; i++)
 	{
 		num += i;
-		triangle.push_back(num);
+		tmp.push_back(num);
 	}
+	return tmp;
+}
+
+int main()
+{
+	int t, k, num = 0;
+	vector<int> triangle = triangularNum(num);
 
 	cin >> t;
 	while (t--)
