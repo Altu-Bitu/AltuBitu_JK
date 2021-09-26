@@ -10,8 +10,7 @@ void resign(int day, int money)
 {
 	// 퇴사하는 날
 	if (day == n)
-		if (money > max_money)
-			max_money = money;
+		max(max_money, money)
 	if (day >= n)
 		return;
 	// 하루 건너뜀
