@@ -38,8 +38,7 @@ int mode()
 	sort(cnt.begin(), cnt.end(), cmp);
 	if ((cnt.size() == 1) || cnt[0].second != cnt[1].second)
 		return cnt[0].first;
-	else
-		return cnt[1].first;
+	return cnt[1].first;
 }
 
 int range()
