@@ -33,7 +33,7 @@ int lowerSearch(int left, int right, int target)
 		int mid = (left + right) / 2;
 		int blueray = cut(mid, target); // 블루레이의 크기: mid
 		// 블루레이 최소 크기 구하기
-		if (blueray <= target) // m개 보다 적은 블루레이에 담을 수 있는 경우
+		if (blueray <= target) // m개 이하의 블루레이에 담을 수 있는 경우
 		{
 			ans = mid;
 			right = mid - 1;
