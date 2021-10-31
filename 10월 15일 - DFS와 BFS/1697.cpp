@@ -10,7 +10,7 @@ int bfs(int n, int k)
 	queue<lt> q;
 	q.push(lt(n, 0));
 	// 방문한 곳 체크, 이미 간 곳 나중에 갈 필요 없으니 공유 가능
-	// 체크 안하면 메모리 초과
+	// 체크 안하면 메모리 초과 
 	vector<int> visited(100001, 0);
 	while (!q.empty())
 	{
