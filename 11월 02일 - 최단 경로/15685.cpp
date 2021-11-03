@@ -33,7 +33,6 @@ int dragonCurve(int n, vector<vector<int>> & curve)
 		//cout << "NEW GENERATION" << '\n';
 		for (int j = 1; j <= lines; j++)
 		{
-			//cout <<" WHAT: " << pow(2, k) - 1 - j << '\n';
 			x += dx[direction];
 			y += dy[direction];
 			direction = (v[ pow(2, k) - 1 - j] + 1) % 4; // 대칭성 이용
