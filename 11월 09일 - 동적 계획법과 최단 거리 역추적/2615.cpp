@@ -65,7 +65,6 @@ vector<int> solution()
 				if (win[0] != 0)
 					return win;
 			}
-			
 		}
 	}
 	return { 0, 0, 0 };
