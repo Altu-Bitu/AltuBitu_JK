@@ -32,7 +32,7 @@ int main()
 		while (true) // 비어있는 노드를 찾을 때까지 이동
 		{
 			if (v[i].data < root->data)
-			{
+			{ 
 				if (root->left == NULL)
 				{
 					root->left = &v[i];
