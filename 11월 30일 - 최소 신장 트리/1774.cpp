@@ -63,7 +63,7 @@ int main()
 	// 좌표
 	for (int i = 1; i < n + 1; i++)
 		cin >> gods[i].first >> gods[i].second;
-	// 이미 연결된 통로
+	// 이미 연결된 통로를 추가
 	for (int i = 0; i < m; i++)
 	{
 		cin >> a >> b;
