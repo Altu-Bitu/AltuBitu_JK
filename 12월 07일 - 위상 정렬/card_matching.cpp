@@ -24,11 +24,13 @@ pair<int, pair<int, int>> moveCards(int card, vector<vector<int>> &board, int r,
 		int cr = q.front().second.first;
 		int cc = q.front().second.second;
 		q.pop();
+		// 카드를 찾았을 
 		if (board[cr][cc] == card)
 		{
 			board[cr][cc] = 0;
 			return { cnt + 1, {cr, cc} };
 		}
+		// 방향키 (한 칸)
 		for (int i = 0; i < 4; i++) {
 			int nr = cr + dr[i];
 			int nc = cc + dc[i];
@@ -40,14 +42,14 @@ pair<int, pair<int, int>> moveCards(int card, vector<vector<int>> &board, int r,
 				}
 			}
 		}
-
+		// ctrl + 방향키
 		for (int i = 0; i < 4; i++) {
 			int nr = cr;
 			int nc = cc;
 			while (nr + dr[i] >= 0 && nr + dr[i] < 4 && nc + dc[i] >= 0  && nc + dc[i] < 4) {
 				nr += dr[i];
 				nc += dc[i];
-				if (board[nr][nc])
+				if (board[nr][nc]) // 가장 가까운 카드를 만났을 때
 					break;
 			}
 			if (!check[nr][nc]) {
@@ -74,13 +76,13 @@ int solution(vector<vector<int>> board, int r, int c) {
 		int min_moves = 0;
 		int tr = r, tc = c;
 		for (int i = 0; i < cards.size(); i++) {
-			// first card
-			moved = moveCards(cards[i], game_board, tr, tc);
+			// 첫 번째 카드
+			moved = moveCards(cards[i], game_board, tr, tc); // 최단 경로
 			min_moves += moved.first;
 			tr = moved.second.first;
 			tc = moved.second.second;
-			// second card
-			moved = moveCards(cards[i], game_board, tr, tc);
+			// 두 번째 카드
+			moved = moveCards(cards[i], game_board, tr, tc); // 최단 경로
 			min_moves += moved.first;
 			tr = moved.second.first;
 			tc = moved.second.second;
