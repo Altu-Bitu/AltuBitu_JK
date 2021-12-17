@@ -24,7 +24,7 @@ pair<int, pair<int, int>> moveCards(int card, vector<vector<int>> &board, int r,
 		int cr = q.front().second.first;
 		int cc = q.front().second.second;
 		q.pop();
-		// 카드를 찾았을 
+		// 카드를 찾았을 때
 		if (board[cr][cc] == card)
 		{
 			board[cr][cc] = 0;
