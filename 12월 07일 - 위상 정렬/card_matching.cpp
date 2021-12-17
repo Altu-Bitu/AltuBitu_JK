@@ -1,4 +1,4 @@
-// https://wizii.tistory.com/27
+//래퍼런스 https://wizii.tistory.com/27
 
 #include <iostream>
 #include <string>
